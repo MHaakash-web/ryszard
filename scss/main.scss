@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+//variables
+
+$ash: #f9f9f9;
+$dark-ash: #eeeeee;
+$dark: #161616;
+
+.title {
+  text-align: center;
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 5px;
+    z-index: 1;
+    margin-bottom: 40px;
+  }
+}
+
+section,
+footer {
+  width: 100%;
+
+  &:first-child {
+    height: 100vh;
+  }
+
+  .inner {
+    margin: auto;
+    width: 90%;
+    max-width: 1920px;
+    padding: 10px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-column: repeat(6, 1fr);
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.logo a {
+  font-size: 20px;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.393);
+}
+
+.banner {
+  background-image: url(assets/banner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right -100px center;
+  position: relative;
+
+  a {
+    color: white;
+  }
+
+  .names {
+    position: absolute;
+    top: 80%;
+    color: white;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+
+  .logo {
+    grid-column: 1/5;
+    font-size: 10px;
+  }
+
+  .title {
+    h2 {
+      position: relative;
+      display: inline-block;
+      letter-spacing: 5px;
+      z-index: 1;
+      margin-bottom: 40px;
+    }
+  }
+  nav {
+    grid-column: 6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .fa {
+      color: white;
+      font-size: 12px;
+      margin-right: 20px;
+    }
+
+    .fa,
+    .nav-btn {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      width: 20px;
+
+      &:hover {
+        span {
+          &:first-child {
+            width: 10px;
+          }
+
+          &:last-child {
+            width: 20px;
+          }
+        }
+      }
+    }
+
+    span {
+      margin-top: 2px;
+      height: 2px;
+      width: 20px;
+      display: block;
+      background-color: white;
+      transition: 0.5s ease;
+
+      &:nth-child(2) {
+        width: 15px;
+      }
+
+      &:nth-child(3) {
+        width: 10px;
+      }
+    }
+  }
+}
+
+.section-two {
+  background-color: $ash;
+  padding: 50px 0;
+
+  .title h1,
+  p {
+    color: $dark;
+    text-align: center;
+  }
+
+  .sliding-image {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+.portfolio {
+  padding: 50px 0;
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: center;
+
+    div {
+      &:last-child {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  h2 {
+    &::after {
+      content: "";
+      height: 55%;
+      width: 140%;
+      background-color: $dark-ash;
+      position: absolute;
+      left: -20%;
+      bottom: -10%;
+      z-index: -1;
+    }
+  }
+}
+
+.about-me {
+  .big {
+    display: none;
+  }
+
+  .image {
+    text-align: right;
+
+    img {
+      max-width: 100%;
+      align-self: right;
+    }
+  }
+
+  h2 {
+    &::after {
+      content: "";
+      height: 55%;
+      width: 140%;
+      background-color: $dark-ash;
+      position: absolute;
+      left: -20%;
+      top: -5%;
+      z-index: -1;
+    }
+  }
+}
+
+.contact-section {
+  padding: 50px 0;
+  background-color: $ash;
+
+  .title {
+    h3 {
+      letter-spacing: 0px;
+      line-height: 1.6rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  form {
+    width: 90%;
+    max-width: 400px;
+    margin: 0px auto;
+    text-align: center;
+
+    input {
+      width: 100%;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      border-radius: 0px;
+      border: 1px solid $dark-ash;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $dark-ash;
+      }
+
+      &::placeholder {
+        text-transform: uppercase;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+      }
+    }
+
+    a {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 30px;
+      background-color: $dark-ash;
+      font-weight: bold;
+      color: white;
+      background-color: black;
+      border: 1px solid $dark;
+      transition: 0.4s ease-in-out;
+
+      &:hover {
+        color: black;
+        background-color: $ash;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  padding: 20px 0;
+
+  a {
+    font-size: 1.5rem;
+  }
+
+  .fa {
+    text-decoration: none;
+    color: black;
+  }
+
+  img {
+    width: 20px;
+    max-width: 100%;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 0.8rem;
+  }
+}
+
+// tablet responsive
+
+@media only screen and (min-width: 768px) {
+  .search-btn {
+    .fa-search {
+      transform: scale(1.2);
+    }
+  }
+
+  .about-me {
+    padding: 100px 0;
+    position: relative;
+
+    .image {
+      z-index: 1;
+      position: relative;
+    }
+
+    .small {
+      display: none;
+    }
+
+    .text {
+      padding-left: 50px;
+      max-width: 400px;
+
+      .title {
+        display: block;
+        text-align: left;
+        position: relative;
+        z-index: -2;
+      }
+    }
+
+    .grid {
+      grid-template-columns: repeat(2, 2fr);
+    }
+
+    h2 {
+      font-size: 3rem;
+
+      &::after {
+        content: "";
+        height: 80%;
+        width: 165%;
+        left: -50%;
+        top: -30%;
+        z-index: -1;
+      }
+    }
+  }
+
+  .portfolio .grid {
+    grid-template-columns: repeat(6, 1fr);
+
+    div {
+      grid-column: span 2;
+
+      &:nth-child(4),
+      &:nth-child(5) {
+        grid-column: span 3;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 880px) {
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  .portfolio .grid {
+    grid-template-columns: repeat(5, 1fr);
+
+    div {
+      grid-column: span 1 !important;
+    }
+  }
+
+  .contact-section br {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .banner {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .about-me .text {
+    padding-left: 100px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  p {
+    font-size: 1.2rem;
+  }
+  .section-two .title {
+    margin-bottom: -100px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .section-two .title {
+    margin-bottom: -200px;
+  }
+}
